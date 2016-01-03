@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.objets.celeste.pojos.planete.Planete" table="TB_PLANETES">
+		<id name="planeteID" type="string" column="ID">
+
+			<generator class="com.objets.celeste.dao.util.IdentifiantPersonnalise">
+				<param name="prefixObjet">PID</param>
+				<param name="nomTable">TB_PLANETES</param>
+			</generator>
+		</id>
+		<property name="nom" type="string">
+			<column name="PLANETE_NOM" />
+		</property>
+		<property name="couleur" type="string">
+			<column name="PLANETE_COULEUR" />
+		</property>
+		<property name="rayon" type="int">
+			<column name="PLANETE_RAYON" />
+		</property>
+	</class>
+</hibernate-mapping>
